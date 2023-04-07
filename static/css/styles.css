@@ -1,0 +1,149 @@
+/* All */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.1s linear;
+    font-size: 1.05rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 5rem;
+    height: 5%;
+}
+
+/* Heading */
+
+header {
+    background-image: -webkit-linear-gradient(105deg, #888, #111);
+    display: flex;
+    flex: none 2 4rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 10%;
+    border-bottom: 0.1rem solid #fff;
+}
+
+header .brand {
+    max-height: 50px;
+    width: 50px;
+}
+
+header nav .nav-item {
+    color: #fff;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+nav .nav-item:hover{
+    background: -webkit-linear-gradient(135deg, #5BC0F8, #AA77FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 0.1rem solid #9999;
+}
+
+header .bars i, div.socials a {
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+header .bars:hover, div.socials a:hover {
+    background: -webkit-linear-gradient(135deg, #5BC0F8, #AA77FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#dropdown {
+    display: none;
+}
+
+/* Main */
+
+div.introduction {
+    background-image: linear-gradient(55deg, rgba(0, 0, 0, 0.3), rgba(95, 95, 95, 0.65)), url(../images/introduction.jpg);
+    background-position: center 40%;
+    background-size: 110vmax;
+    padding: 11% 7%;
+    text-align: center;
+    color: #fff;
+}
+
+div.title-box {
+    margin: 2% 3%;
+    border: 0.1rem solid #fff;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+div.title-box h1 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 900;
+    font-size: 6rem;
+    margin: 2rem;
+}
+
+div.title-box h3 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size:2rem;
+    margin: 2rem;
+}
+
+/* About */ 
+
+#about {
+    text-align: center;    
+}
+
+div.section-title h2 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    margin: 4% 7% 2%;
+    font-size: 3rem;
+}
+
+/* Footer */ 
+
+footer {
+    background-image: -webkit-linear-gradient(105deg, #888, #111);
+    text-align: center;
+    border-top: 0.1rem solid #fff;
+}
+
+div.footer {
+    padding-bottom: 2%;
+}
+
+h2.title-white {
+    color: #fff;
+}
+
+div.socials a {
+    margin: 2%;
+}
+
+div.copyright {
+    color: #999;
+    margin-top: 2%;
+}
