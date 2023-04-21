@@ -1,6 +1,11 @@
-const navbar = document.querySelector(".navbar");
-const dropdown = document.querySelector(".bars");
+let navbar = document.querySelector(".navbar");
+let dropdown = document.querySelector(".bars");
 
-dropdown.onClick(() => {
+dropdown.onclick = () => {
     navbar.classList.toggle("nav-active");
-})
+};
+
+window.onscroll = () => {
+    navbar.classList.remove("nav-active");
+}
+
