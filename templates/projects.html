@@ -1,0 +1,61 @@
+{% include "header.html" %}
+
+<header>
+    <img
+        class="brand"
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="logo"
+    />
+
+    <nav class="navbar">
+        <a class="nav-item" href="{{ url_for('home') }}">Back</a>
+    </nav>
+</header>
+
+<section id="projects-display">
+    <div class="container">
+        <h2 class="projects-list">{{ data.type }}</h2>
+        <div class="project-grid">
+            {% for project in data.projects %}
+            <a href="{{ project.link }}">
+                <div class="card" data-name="{{ project.id }}">
+                    <h5>{{ project.source }}</h5>
+                    <h3>{{ project.title }}</h3>
+                    <div class="brief-description">
+                        <p>{{ project.briefDescription }}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- <section id="preview">
+    <div class="project-preview">
+        {% for project in data.projects %}
+        <div class="preview-display" data-target="{{ project.id }}">
+            <h3>{{ project.title }}</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. A
+                iaculis at erat pellentesque adipiscing commodo. Quis imperdiet
+                massa tincidunt nunc pulvinar sapien et ligula. Tristique
+                senectus et netus et malesuada fames ac. Praesent semper feugiat
+                nibh sed pulvinar proin. Eu facilisis sed odio morbi quis
+                commodo odio. Facilisi morbi tempus iaculis urna id volutpat
+                lacus laoreet. Neque volutpat ac tincidunt vitae semper quis
+                lectus. Pretium vulputate sapien nec sagittis aliquam malesuada
+                bibendum. Adipiscing diam donec adipiscing tristique risus nec
+                feugiat in fermentum. Iaculis nunc sed augue lacus viverra vitae
+                congue eu consequat. Ipsum nunc aliquet bibendum enim facilisis
+                gravida neque convallis a. At risus viverra adipiscing at in
+                tellus.
+            </p>
+            <button>Close</button>
+        </div>
+        {% endfor %}
+    </div>
+</section> -->
+
+{% include "footer.html" %}

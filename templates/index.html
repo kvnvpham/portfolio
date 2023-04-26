@@ -1,85 +1,97 @@
-{% extends 'base.html' %} {% block main %}
-<section id="title">
-    <div class="introduction">
-        <div class="title-box">
-            <div class="name">
-                <h1>Kevin Pham</h1>
-            </div>
-            <div class="job-title">
-                <h3>Software Developer</h3>
-            </div>
-        </div>
-    </div>
-</section>
+{% extends 'base.html' %} 
 
-<section id="about">
-    <div class="container">
-        <div class="about-section">
-            <h2>About</h2>
-            <div class="about-content">
-                <div class="description">
-                    <p class="content">
-                        I am a healthcare professional that is passionate about
-                        software development.
-                    </p>
-                    <p class="content">
-                        I hope to find an opportunity to grow my skill set
-                        within the technology industry as a software developer.
-                    </p>
-                    <p class="content">
-                        Through programming, I love to craft and realize my
-                        ideas while enjoying all of its challenges.
-                    </p>
-                    <p class="content">
-                        During my free time, I continue to learn new computer
-                        science concepts or develop my programming skills.
-                    </p>
+{% block main %}
+
+    <section id="title">
+        <div class="introduction">
+            <div class="title-box">
+                <div class="name">
+                    <h1>Kevin Pham</h1>
                 </div>
-                <div class="skills">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>Python</li>
-                        <ul class="python-skills">
-                            <li>Flask</li>
-                            <li>NumPy</li>
-                            <li>Pandas</li>
-                        </ul>
-                        <li>Javascript</li>
-                        <ul class="js-skills">
-                            <li>NodeJS</li>
-                            <li>ExpressJS</li>
-                            <li>ReactJS</li>
-                        </ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>SQL</li>
-                        <li>MongoDB</li>
-                        <li>REST APIs</li>
-                        <li>Git</li>
-                    </ul>
+                <div class="job-title">
+                    <h3>Software Developer</h3>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="projects">
-    <div class="container">
-        <div class="projects-section">
-            <h2>Projects</h2>
-            <div class="grid-container">
-                {% for project in projects %}
-                <div class="card">
-                    <h5>{{ project.source }}</h5>
-                    <h3>{{ project.title }}</h3>
-                    <div class="card-content">
-                        <p>{{ project.description[:30] }}...</p>
+    <section id="about">
+        <div class="container">
+            <div class="about-section">
+                <h2>About</h2>
+                <div class="about-content">
+                    <div class="description">
+                        <p class="content">
+                            I am a healthcare professional that is passionate about
+                            software development.
+                        </p>
+                        <p class="content">
+                            I hope to find an opportunity to grow my skill set
+                            within the technology industry as a software developer.
+                        </p>
+                        <p class="content">
+                            Through programming, I love to craft and realize my
+                            ideas while enjoying all of its challenges.
+                        </p>
+                        <p class="content">
+                            During my free time, I continue to learn new computer
+                            science concepts or develop my programming skills.
+                        </p>
                     </div>
-                    <a href="{{ project.link }}">View</a>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>Python</li>
+                            <ul class="python-skills">
+                                <li>Flask</li>
+                                <li>NumPy</li>
+                                <li>Pandas</li>
+                            </ul>
+                            <li>Javascript</li>
+                            <ul class="js-skills">
+                                <li>NodeJS</li>
+                                <li>ExpressJS</li>
+                                <li>ReactJS</li>
+                            </ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>SQL</li>
+                            <li>MongoDB</li>
+                            <li>REST APIs</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <hr>
+
+    <section id="projects">
+        <div class="container">
+            <div class="projects-section">
+                <h2>Projects</h2>
+                <div class="categories">
+                    <div class="category-items">
+                        {% for project in projects %}
+                        <a href="{{ url_for('get_projects', type_id=project.id) }}">
+                            <div class="item">
+                                <img
+                                    class="item-img"
+                                    src="{{ url_for('static', filename=project.imagePath) }}"
+                                    alt="script"
+                                />
+                                <div class="item-header">
+                                    <h3>{{ project.type }}</h3>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

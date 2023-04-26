@@ -75,7 +75,9 @@ div.socials a {
 }
 
 header .bars:hover,
-div.socials a:hover {
+div.socials a:hover,
+div.skills li:hover,
+div.category-items .item:hover {
     background: -webkit-linear-gradient(135deg, #5bc0f8, #aa77ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -207,32 +209,94 @@ div.skills li {
     color: #444;
 }
 
+div.skills li:hover {
+    transform: scale(1.1);
+}
+
 div.skills .python-skills,
 .js-skills {
     margin-left: 18%;
 }
 
+hr {
+    background-color: transparent;
+    border: 0;
+    border-top: 0.1rem solid #ddd;
+    display: block;
+    height: 0;
+    margin: 1rem auto;
+    width: 70%;
+}
+
 /* Projects */
 
-div.projects-section .grid-container {
+div.categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.category-items {
+    display: flex;
+    flex-direction: column;
+}
+
+div.category-items .item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 1.5rem;
+}
+
+div.category-items .item:hover {
+    transform: scale(0.9);
+}
+
+div.item .item-img {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 2rem;
+}
+
+/* Projects List*/
+
+h2.projects-list {
+    margin-top: 3%;
+    padding: 3% 3%;
+}
+
+@media (max-width: 1080px) {
+    h2.projects-list {
+        margin-top: 12%;
+    }
+}
+
+div.project-grid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
 }
 
-div.grid-container .card {
-    border: 0.1rem solid #ddd;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    text-align: center;
-    height: 15rem;
-    padding: 8%;
-    border-radius: 15px;
-    cursor: pointer;
-    color: #444;
+div.project-grid a {
+    color: inherit;
 }
 
-div.grid-container .card:hover {
-    border: 0.1rem solid #444;
+div.card {
+    outline: 0.1rem solid #ddd;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15rem;
+    cursor: pointer;
+    border-radius: 15px;
+    text-align: center;
+}
+
+div.card:hover {
+    outline: 0.2rem solid #444;
+    transform: scale(0.95);
 }
 
 div.card h5 {
@@ -240,24 +304,13 @@ div.card h5 {
 }
 
 div.card h3 {
-    margin: 1.2rem;
+    margin: 1rem;
     font-size: 1.2rem;
 }
 
-div.card p, a {
-    font-size: 1rem;
-}
-
-div.card .card-content {
-    margin: 6%;
-    padding: 4%;
-}
-
-div.card a {
-    background-image: -webkit-linear-gradient(105deg, #888, #111);
-    color: #fff;
-    padding: 4%;
-    margin: 15%;
+div.card .brief-description p {
+    margin: 1rem 1rem;
+    text-transform: none;
 }
 
 /* Footer */

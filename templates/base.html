@@ -1,78 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kevin V Pham</title>
-
-        <!-- Google Fonts -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Nunito+Sans:wght@400;700;900&display=swap"
-            rel="stylesheet"
+{% include "header.html" %}
+    
+    <header>
+        <img
+            class="brand"
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="logo"
         />
 
-        <!-- Custom CSS -->
-        <link
-            href="{{ url_for('static', filename='css/styles.css') }}"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <header>
-            <img
-                class="brand"
-                src="{{ url_for('static', filename='images/logo.png') }}"
-                alt="logo"
-            />
+        <nav class="navbar">
+            <a class="nav-item" href="#about">About</a>
+            <a class="nav-item" href="#projects">Projects</a>
+            <a class="nav-item" href="#contact">Contact</a>
+        </nav>
 
-            <nav class="navbar">
-                <a class="nav-item" href="#about">About</a>
-                <a class="nav-item" href="#projects">Projects</a>
-                <a class="nav-item" href="#contact">Contact</a>
-            </nav>
+        <div class="bars">
+            <i class="fa-solid fa-bars" id="dropdown"></i>
+        </div>
+    </header>
 
-            <div class="bars">
-                <i class="fa-solid fa-bars" id="dropdown"></i>
-            </div>
-        </header>
+    {% block main %}{% endblock %}
 
-        {% block main %}{% endblock %}
-
-        <section id="contact">
-            <footer>
-                <div class="container">
-                    <div class="footer">
-                        <div class="section-title">
-                            <h2 class="title-white">Contact</h2>
-                        </div>
-                        <div class="socials">
-                            <a href="mailto:kvnvpham@gmail.com"
-                                ><i class="fa-solid fa-envelope"></i
-                            ></a>
-                            <a href="#"><i class="fa-brands fa-github"></i></a>
-                            <a href="#"
-                                ><i class="fa-brands fa-linkedin"></i
-                            ></a>
-                            <a href="#"
-                                ><i class="fa-brands fa-instagram"></i
-                            ></a>
-                        </div>
-                        <div class="copyright">
-                            <p>Copyright ©️ Kevin Pham {{ year }}</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </section>
-
-        <!-- Font Awesome -->
-        <script
-            src="https://kit.fontawesome.com/d48c10707a.js"
-            crossorigin="anonymous"
-        ></script>
-
-        <!-- Custom JS -->
-        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-    </body>
-</html>
+{% include "footer.html" %}
