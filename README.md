@@ -3,6 +3,8 @@
 <details><summary><h2>Contents</h2></summary>
 
 * [Description](#description)
+* [Installation](#installation)
+* [Links](#links)
 
 </details>
 
