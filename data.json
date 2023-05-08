@@ -157,6 +157,13 @@
                 "title": "Meal Planner",
                 "briefDescription": "Aids users in logging recipes and managing meal plans for the week",
                 "link": "https://github.com/kvnvpham/meal_planner"
+            }, 
+            {
+                "id": 9,
+                "source": "Github",
+                "title": "Application Tracker",
+                "briefDescription": "Allows users to log submitted work applications",
+                "link": "https://github.com/kvnvpham/applicationTracker"
             }
         ]
     },
